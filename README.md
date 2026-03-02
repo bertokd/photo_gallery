@@ -21,4 +21,6 @@ A Django külön kezeli a fejlesztés során használt statikus fájlokat (CSS, 
 
 Static: A stíluslapok (style.css) és scriptek (main.js) a static mappában kaptak helyet.
 
+
+A választott PaaS a Red Hat Openshift lett, ahova a megfelelő lépések szerint létrehoztam a Sandbox-ot, a github repository linkjével deploy-oltam az alkalmazást, beállítottam a megfelelő build és deployment config-okat, környezeti változókat, majd az automatikusan indított pod-ban futó alkalmazást a Topology-ban található linkn keresztül megnyitottam és kipróbáltam. A webhook azonban szerintem az ingyenes verzió korlátosságai miatt nem érhető el a github-ból, tudomásom szerint ebbe a problémába mások is belefutottak már, pedig ott is a megfelelő URL és beállítások kerültek megadásra.
 Media: A settings.py-ban konfigurált MEDIA_URL és MEDIA_ROOT beállítások teszik lehetővé, hogy a feltöltött képek a szerver fájlrendszerébe kerüljenek, és URL-en keresztül elérhetőek legyenek a böngésző számára
