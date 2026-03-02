@@ -1,0 +1,5 @@
+<form action="{% url 'photos:new-photo' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button>Add Photo!</button>
+</form>

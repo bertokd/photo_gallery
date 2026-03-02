@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Gallery
+{% endblock %}
+
+{% block content %}
+    <h1>Photo Gallery</h1>
+    
+    <div class="gallery-container">
+        {% for photo in photos %}
+            <article class="gallery-card">
+                <a href="{% url 'photos:page' slug=photo.slug %}">
+                    <img class="gallery-image" src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                </a>
+                <div class="gallery-info">
+                    <h2>{{ photo.title }}</h2>
+                    <p>{{ photo.date|date:"M d, Y" }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}

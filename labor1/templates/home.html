@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h1>Home</h1>
+    <p>Check out my <a href="/about">about</a> page.</p>
+    
+    <hr>
+    
+    <p>
+        <a href="{% url 'users:login' %}">Login</a> | 
+        <a href="{% url 'users:register' %}">Register</a>
+    </p>
+{% endblock %}

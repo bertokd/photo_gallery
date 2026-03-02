@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ photo.title }}
+{% endblock %}
+
+{% block content %}
+    <section class="photo-detail">
+        <h1>{{ photo.title }}</h1>
+        
+        <img class="main-photo" src="{{ photo.image.url }}" alt="{{ photo.title }}" style="width:100%; max-width:800px; height:auto; border-radius: 8px;">
+        
+        <div class="photo-meta" style="margin-top: 20px; color: #aaa;">
+            <p>
+                Uploaded on {{ photo.date }} by 
+                <strong>{{ photo.author.username }}</strong>
+            </p>
+        </div>
+        
+        <div class="photo-description" style="margin-top: 20px; font-size: 1.2rem;">
+            <p>{{ photo.description }}</p>
+        </div>
+
+        <hr style="margin: 30px 0; border-color: #333;">
+        
+        <a href="{% url 'photos:list' %}">← Back to Gallery</a>
+    </section>
+{% endblock %}
