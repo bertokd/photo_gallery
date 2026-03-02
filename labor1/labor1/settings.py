@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://photo-gallery-bertokd-dev.apps.rm3.7wse.p1.openshiftapps.com'
+]
+
 
 # Application definition
 
