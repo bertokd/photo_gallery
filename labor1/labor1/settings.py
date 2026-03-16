@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'labor1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATA_DIR = BASE_DIR / 'data'
+DATA_DIR = '/opt/app-root/src/data'
 
 DATABASES = {
     'default': {
