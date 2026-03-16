@@ -15,6 +15,10 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = os.path.join(BASE_DIR, 'data')
+
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -78,8 +82,6 @@ WSGI_APPLICATION = 'labor1.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATA_DIR = '/opt/app-root/src/data'
 
 DATABASES = {
     'default': {
