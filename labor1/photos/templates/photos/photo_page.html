@@ -12,7 +12,7 @@
         
         <div class="photo-meta" style="margin-top: 20px; color: #aaa;">
             <p>
-                Uploaded on {{ photo.date }} by 
+                Uploaded on <p>{{ photo.date|date:"Y-m-d H:i" }}</p> by 
                 <strong>{{ photo.author.username }}</strong>
             </p>
         </div>
@@ -22,6 +22,10 @@
         </div>
 
         <hr style="margin: 30px 0; border-color: #333;">
+
+        {% if user.is_authenticated and user == photo.author %}
+            <a href="{% url 'photos:delete' slug=photo.slug %}" style="color: red;">Delete this photo</a>
+        {% endif %}
         
         <a href="{% url 'photos:list' %}">← Back to Gallery</a>
     </section>

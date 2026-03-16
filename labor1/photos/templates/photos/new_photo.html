@@ -1,5 +1,17 @@
-<form action="{% url 'photos:new-photo' %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form }}
-    <button>Add Photo!</button>
-</form>
+{% extends 'layout.html' %}
+
+{% block title %}
+    Upload New Photo
+{% endblock %}
+
+{% block content %}
+    <h1>Upload a New Photo</h1>
+    
+    <form class="form-with-validation" action="{% url 'photos:new' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form }}
+        
+        <button type="submit">Add Photo!</button>
+    </form>
+{% endblock %}

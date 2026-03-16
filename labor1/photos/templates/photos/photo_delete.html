@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="form-with-validation" style="text-align: center;">
+        <h2>Are you sure you want to delete "{{ photo.title }}"?</h2>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" style="background-color: #cf6679;">Yes, Delete</button>
+            <a href="{% url 'photos:page' slug=photo.slug %}" class="button">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

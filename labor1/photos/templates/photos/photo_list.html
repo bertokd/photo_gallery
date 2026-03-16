@@ -6,17 +6,30 @@
 
 {% block content %}
     <h1>Photo Gallery</h1>
+
+    {% if user.is_authenticated %}
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="{% url 'photos:new' %}" style="display: inline-block; background-color: var(--accent-color, #bb86fc); color: #121212; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem;">
+                + Upload New Photo
+            </a>
+        </div>
+    {% endif %}
+
+    <div class="sorting-options" style="text-align: center; margin-bottom: 20px;">
+        <span>Sort by: </span>
+        <a href="?sort=date" class="button">Date</a> | 
+        <a href="?sort=name" class="button">Name</a>
+    </div>
     
     <div class="gallery-container">
         {% for photo in photos %}
             <article class="gallery-card">
                 <a href="{% url 'photos:page' slug=photo.slug %}">
-                    <img class="gallery-image" src="{{ photo.image.url }}" alt="{{ photo.title }}">
-                </a>
                 <div class="gallery-info">
                     <h2>{{ photo.title }}</h2>
-                    <p>{{ photo.date|date:"M d, Y" }}</p>
+                    <p>{{ photo.date|date:"Y-m-d H:i" }}</p>
                 </div>
+                </a>
             </article>
         {% endfor %}
     </div>
